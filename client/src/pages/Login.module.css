@@ -1,10 +1,5 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
+.container {
+    width: 100%;
     font-family: Arial, sans-serif;
     background-image: url("../assets/bg.jpg");
     background-repeat: no-repeat;
@@ -13,11 +8,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-.container {
-    max-width: 400px;
-    width: 100%;
     padding: 50px;
     background-color: #f1f1f1;
     border-radius: 10px;
@@ -33,72 +23,6 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #555;
-}
-
-.group {
-    margin-bottom: 15px;
-}
-
-label {
-    font-size: 14px;
-    color: #888;
-}
-
-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
-    transition: border-color 0.3s ease;
-    margin-left: 25px;
-}
-
-input:focus {
-    border-color: #6c63ff;
-}
-
-button {
-    padding: 10px;
-    background-color: #6c63ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.login:hover {
-    background-color: #574fe7;
-}
-
-.buttonGroup {
-    display: flex;
-    justify-content: space-between;
-}
-
-.buttonGroup > button {
-    width: 100%;
-}
-
-.forgotLink,
-.registerButton {
-    margin-top: 10px;
-    cursor: pointer;
-    text-decoration: underline;
-}
-
-.forgotLink {
-    color: #6c63ff;
-    background-color: transparent;
-}
-
-.registerButton {
-    background-color: #5cb85c;
-    text-decoration: none;
-}
-
-.registerButton:hover {
-    background-color: #479c47;
 }
 
 .modalOverlay {
@@ -133,4 +57,243 @@ button {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
+}
+
+/* Forgot Passwor button */
+.cta {
+    border: none;
+    background: none;
+    margin-top: 20px;
+}
+
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active svg {
+    transform: scale(0.9);
+}
+
+.hover_underline_animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.hover_underline_animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover_underline_animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Login & Register buttons */
+button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+button.learn_more {
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
+}
+
+button.learn_more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #282936;
+    border-radius: 1.625rem;
+}
+
+button.learn_more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+button.learn_more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+button.learn_more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+button.learn_more .button_text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #282936;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button:hover .circle {
+    width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+button:hover .button_text {
+    color: #fff;
+}
+
+/* Inputs */
+.group {
+    position: relative;
+}
+
+.input {
+    font-size: 1rem;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+    margin-top: 20px;
+}
+
+.input:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+}
+
+.input:focus ~ label,
+.input:valid ~ label {
+    top: -20px;
+    font-size: 14px;
+    color: #5264ae;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.bar:before,
+.bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264ae;
+    -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+.input:focus ~ .bar:before,
+.input:focus ~ .bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264ae;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
 }
