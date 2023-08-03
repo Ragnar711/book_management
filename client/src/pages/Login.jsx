@@ -22,7 +22,7 @@ const Login = () => {
                 <h2>Login</h2>
                 <div className={style.group}>
                     <input
-                        required=""
+                        required
                         type="text"
                         className={style.input}
                         placeholder="Username"
@@ -32,7 +32,7 @@ const Login = () => {
                 </div>
                 <div className={style.group}>
                     <input
-                        required=""
+                        required
                         type="text"
                         className={style.input}
                         placeholder="Password"
