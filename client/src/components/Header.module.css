@@ -33,14 +33,11 @@ hr {
 }
 
 /* Logout */
-button {
+#logout {
     padding: 0;
     margin: 0;
     border: none;
     background: none;
-}
-
-button {
     --primary-color: #111;
     --hovered-color: #c84747;
     position: absolute;
@@ -53,14 +50,14 @@ button {
     align-items: center;
 }
 
-button p {
+#logout p {
     margin: 0;
     position: relative;
     font-size: 20px;
     color: var(--primary-color);
 }
 
-button::after {
+#logout::after {
     position: absolute;
     content: "";
     width: 0;
@@ -71,30 +68,33 @@ button::after {
     transition: 0.3s ease-out;
 }
 
-button p::before {
+#logout p::before {
     position: absolute;
     content: "Logout";
     width: 0%;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     color: var(--hovered-color);
     overflow: hidden;
     transition: 0.3s ease-out;
 }
 
-button:hover::after {
+#logout:hover::after {
     width: 100%;
 }
 
-button:hover p::before {
+#logout:hover p::before {
     width: 100%;
 }
 
-button:hover svg {
+#logout:hover svg {
     transform: translateX(4px);
     color: var(--hovered-color);
 }
 
-button svg {
+#logout svg {
     color: var(--primary-color);
     transition: 0.2s;
     position: relative;

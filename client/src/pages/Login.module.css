@@ -17,9 +17,10 @@
 .form {
     display: flex;
     flex-direction: column;
+    width: max-content;
 }
 
-h2 {
+.form > h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #555;
@@ -39,7 +40,7 @@ h2 {
 
 .modalContent {
     max-width: 600px;
-    aspect-ratio: 2/1.75;
+    max-height: 400px;
     padding: 20px;
     background-color: #fff;
     border-radius: 5px;
@@ -112,7 +113,10 @@ h2 {
 }
 
 /* Login & Register buttons */
-button {
+.learn_more {
+    width: 100%;
+    margin-top: 20px;
+    height: auto;
     position: relative;
     display: inline-block;
     cursor: pointer;
@@ -126,13 +130,7 @@ button {
     font-family: inherit;
 }
 
-button.learn_more {
-    width: 100%;
-    margin-top: 20px;
-    height: auto;
-}
-
-button.learn_more .circle {
+.learn_more .circle {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: relative;
     display: block;
@@ -143,7 +141,7 @@ button.learn_more .circle {
     border-radius: 1.625rem;
 }
 
-button.learn_more .circle .icon {
+.learn_more .circle .icon {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
     top: 0;
@@ -152,7 +150,7 @@ button.learn_more .circle .icon {
     background: #fff;
 }
 
-button.learn_more .circle .icon.arrow {
+.learn_more .circle .icon.arrow {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     left: 0.625rem;
     width: 1.125rem;
@@ -160,7 +158,7 @@ button.learn_more .circle .icon.arrow {
     background: none;
 }
 
-button.learn_more .circle .icon.arrow::before {
+.learn_more .circle .icon.arrow::before {
     position: absolute;
     content: "";
     top: -0.29rem;
@@ -172,7 +170,7 @@ button.learn_more .circle .icon.arrow::before {
     transform: rotate(45deg);
 }
 
-button.learn_more .button_text {
+.learn_more .button_text {
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
     position: absolute;
     top: 0;
@@ -189,22 +187,23 @@ button.learn_more .button_text {
     text-transform: uppercase;
 }
 
-button:hover .circle {
+.learn_more:hover .circle {
     width: 100%;
 }
 
-button:hover .circle .icon.arrow {
+.learn_more:hover .circle .icon.arrow {
     background: #fff;
     transform: translate(1rem, 0);
 }
 
-button:hover .button_text {
+.learn_more:hover .button_text {
     color: #fff;
 }
 
 /* Inputs */
 .group {
     position: relative;
+    width: 100%;
 }
 
 .input {
@@ -220,18 +219,6 @@ button:hover .button_text {
 
 .input:focus {
     outline: none;
-}
-
-label {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    -webkit-transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    transition: 0.2s ease all;
 }
 
 .input:focus ~ label,
@@ -271,29 +258,4 @@ label {
 .input:focus ~ .bar:before,
 .input:focus ~ .bar:after {
     width: 50%;
-}
-
-.highlight {
-    position: absolute;
-    height: 60%;
-    width: 100px;
-    top: 25%;
-    left: 0;
-    pointer-events: none;
-    opacity: 0.5;
-}
-
-.input:focus ~ .highlight {
-    animation: inputHighlighter 0.3s ease;
-}
-
-@keyframes inputHighlighter {
-    from {
-        background: #5264ae;
-    }
-
-    to {
-        width: 0;
-        background: transparent;
-    }
 }

@@ -11,7 +11,7 @@ const Header = () => {
                 </h1>
                 <hr />
             </div>
-            <button>
+            <button id={styles.logout}>
                 <p>Logout</p>
                 <svg
                     stroke-width="4"

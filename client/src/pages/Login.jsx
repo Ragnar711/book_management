@@ -40,21 +40,17 @@ const Login = () => {
                     <span className={style.highlight}></span>
                     <span className={style.bar}></span>
                 </div>
-                <div className={style.buttonGroup}>
-                    <button
-                        className={style.learn_more}
-                        onClick={() => {
-                            navigate("/Home");
-                        }}
-                    >
-                        <span className={style.circle} aria-hidden="true">
-                            <span
-                                className={`${style.icon} ${style.arrow}`}
-                            ></span>
-                        </span>
-                        <span className={style.button_text}>Login</span>
-                    </button>
-                </div>
+                <button
+                    className={style.learn_more}
+                    onClick={() => {
+                        navigate("/Home");
+                    }}
+                >
+                    <span className={style.circle} aria-hidden="true">
+                        <span className={`${style.icon} ${style.arrow}`}></span>
+                    </span>
+                    <span className={style.button_text}>Login</span>
+                </button>
                 <button className={style.learn_more}>
                     <span className={style.circle} aria-hidden="true">
                         <span className={`${style.icon} ${style.arrow}`}></span>
