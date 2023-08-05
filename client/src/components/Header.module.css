@@ -103,10 +103,10 @@ hr {
 }
 
 @media (max-width: 767px) {
-    button {
+    #logout {
         position: fixed;
         bottom: 20px;
-        right: 20px;
+        left: 20px;
         top: unset;
     }
 }
