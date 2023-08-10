@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./Header.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+    const navigate = useNavigate();
     return (
         <div className={styles.container}>
             <div className={styles.header}>
@@ -11,7 +13,12 @@ const Header = () => {
                 </h1>
                 <hr />
             </div>
-            <button id={styles.logout}>
+            <button
+                id={styles.logout}
+                onClick={() => {
+                    navigate("/");
+                }}
+            >
                 <p>Logout</p>
                 <svg
                     stroke-width="4"
