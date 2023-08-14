@@ -1,6 +1,21 @@
 import "./Filters.css";
+import Dialog from "../pages/AddBook";
+import { useState } from "react";
 
 const Filters = () => {
+    const [dialogOpen, setDialogOpen] = useState(false);
+
+    const handleDialogOpen = () => {
+        setDialogOpen(true);
+    };
+
+    const handleDialogClose = () => {
+        setDialogOpen(false);
+    };
+
+    const handleAddBook = (newBook) => {
+        console.log("Adding book:", newBook);
+    };
     return (
         <div className="filters">
             <h2>Filters</h2>
@@ -53,12 +68,18 @@ const Filters = () => {
                     </label>
                 </div>
             </div>
-            <button class="fancy">
-                <span class="top-key"></span>
-                <span class="text">Add Book</span>
-                <span class="bottom-key-1"></span>
-                <span class="bottom-key-2"></span>
+            <button className="fancy" onClick={handleDialogOpen}>
+                <span className="top-key"></span>
+                <span className="text">Add Book</span>
+                <span className="bottom-key-1"></span>
+                <span className="bottom-key-2"></span>
             </button>
+
+            <Dialog
+                open={dialogOpen}
+                onClose={handleDialogClose}
+                onAddBook={handleAddBook}
+            />
         </div>
     );
 };

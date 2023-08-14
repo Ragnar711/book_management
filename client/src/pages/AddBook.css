@@ -1,0 +1,20 @@
+.image-upload {
+    margin-bottom: 16px;
+}
+
+.review {
+    margin-bottom: 16px;
+}
+
+.genre {
+    margin-bottom: 16px;
+}
+
+.read-status {
+    margin-bottom: 16px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 16px;
+}
